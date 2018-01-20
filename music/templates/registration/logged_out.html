@@ -1,0 +1,20 @@
+<h2>you are logged out!!!</h2>
+<div style="text-algin:center;">
+
+    <fieldset>
+
+        <form method="post" action=".">{% csrf_token %}
+
+            <div style="text-algin:left;">{{ form.as_p }}</div>
+            <a href="{% url 'login' %}">Click here if you want to Login</a>
+
+        </form>
+
+
+    </fieldset>
+
+</div>
+
+<p>
+    <div style="text-algin:left;"><a href="/music/">Main page</a></div>
+</p>

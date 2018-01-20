@@ -1,0 +1,23 @@
+{% extends 'music/base.html' %}
+{% block title %} Albums {% endblock %}
+{% block body %}
+
+    {% if all_albums %}
+    <h3>Here are all my albums: </h3>
+    <ul>
+        {% for album in all_albums %}
+        <li><a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a></li>
+        <a href="{% url 'music:edit_album' album.id %}">Edit</a> |
+        <a href="{% url 'music:delete_album' album.id %}">Delete</a> |
+        <a href="{% url 'music:detail' album.id %}">Comments: {{ album.comment_set.count }}</a>
+        {% if album.edit_date %}
+            , last edited {{ album.edit_date }}
+        {% endif %}
+        {% endfor %}
+    </ul>
+
+    {% else %}
+        <h3>You don't have any albums</h3>
+    {% endif %}
+
+{% endblock %}
