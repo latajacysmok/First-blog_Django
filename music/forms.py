@@ -11,9 +11,12 @@ class PostForm(forms.ModelForm):
                   'genre',
                   'publication_date',
                   'album_logo',)
+        widgets = {
+          'publication_date': forms.TextInput(attrs={'placeholder': 'YYYY-MM-DD'})
+        }
 
 class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ('author', 'comment')
+        fields = ('comment', )

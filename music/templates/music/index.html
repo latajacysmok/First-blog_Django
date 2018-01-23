@@ -8,7 +8,7 @@
         {% for album in all_albums %}
         <li><a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a></li>
         <a href="{% url 'music:edit_album' album.id %}">Edit</a> |
-        <a href="{% url 'music:delete_album' album.id %}">Delete</a> |
+        <a href="{% url 'music:delete_album_confirmation' album.id %}">Delete</a> |
         <a href="{% url 'music:detail' album.id %}">Comments: {{ album.comment_set.count }}</a>
         {% if album.edit_date %}
             , last edited {{ album.edit_date }}
@@ -19,5 +19,15 @@
     {% else %}
         <h3>You don't have any albums</h3>
     {% endif %}
-
+<script type="text/javascript">
+    window.mytest = function() { 
+        var isValid = confirm('Are you sure ?');
+        if (!isValid) { 
+            event.preventDefault(); 
+            alert("It wont delete. Yay!");
+        }else {
+            alert("It will delete in a while.");
+        }
+    }
+</script>
 {% endblock %}

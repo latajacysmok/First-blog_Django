@@ -39,16 +39,17 @@ def favorite(request, album_id):
             return render(request, 'music/detail.html', {'album': album})
 def album_new(request):
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
+        print form.errors
         if form.is_valid():
             album = form.save(commit=False)
             album.save()
-            messages.success(request, 'a new album with the title {} has been created.'.format(album.album_title))  # wiadomość o nowym poście
+            messages.success(request, 'a new album with the title {} has been created.'.format(album.album_title))  # wiadomosc o nowym poscie
             return redirect('http://127.0.0.1:8000/music/{}/'.format(album.pk))
 
     else:
         form = PostForm()
-    return render(request, 'music/album_new.html', {'form': form})
+        return render(request, 'music/album_new.html', {'form': form})
 
 def edit_album(request, album_id):
     album_id = int(album_id)
@@ -77,12 +78,24 @@ def edit_album(request, album_id):
                     })
     return render(request, 'music/edit_album.html', {'form': form})
 
+def delete_album_confirmation(request, album_id):
+    if request.method == 'POST':
+        return delete_album(request, album_id)
+    return render(request, 'music/delete_confirmation.html')
+
 def delete_album(request, album_id):
     album_id = int(album_id)
     album = get_object_or_404(Album, pk=album_id)
     print(Album.objects.filter(id=album_id))
     album.delete()
     return redirect('http://127.0.0.1:8000/music/'.format(album.pk))
+
+def delete_comment(request, comment_id):
+    comment_id = int(comment_id)
+    comment = get_object_or_404(Comment, id=comment_id)
+    comment.delete()
+    return redirect('music:index')
+
 
 def signup(request):
     if request.method == 'POST':
@@ -104,6 +117,7 @@ def add_comment_to_post(request, album_id):
         if form.is_valid():
             comment = form.save(commit=False)
             comment.album = album
+            comment.author = request.user
             comment.save()
             return redirect('http://127.0.0.1:8000/music/'.format(album.pk))
     else:

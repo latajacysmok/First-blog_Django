@@ -10,7 +10,7 @@
                     <div class="alert alert-success alert-dismissible" role="alert">
                         {% for message in messages %}
                             <div {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %} role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <button type="button" class="close" data-dismiss="alert" onclick="$('.alert').hide();" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 <strong>{{ message }}</strong>
                             </div>
                         {% endfor %}
@@ -47,8 +47,21 @@
         <strong>{{ comment.author }}</strong>
         <p>{{ comment.comment|linebreaks }}</p>
         <p>{{ comment.created_date }}</p>
+        <p><a href="">Edit</a> | <a href="{% url 'music:delete_comment' comment.id %}" onclick='window.comment_confirm();'>Delete</a></p>
     </div>
 {% empty %}
     <p>No comments here yet :(</p>
 {% endfor %}
+<script type="text/javascript">
+    window.comment_confirm = function() { 
+        var isValid = confirm('Are you sure ?');
+        if (!isValid) { 
+            event.preventDefault(); 
+            alert("It wont delete. Yay!");
+        }else {
+            alert("It will delete in a while.");
+        }
+    }
+</script>
 {% endblock %}
+

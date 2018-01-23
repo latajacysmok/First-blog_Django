@@ -10,5 +10,7 @@ urlpatterns = [
     url(r'^new/$', views.album_new, name='album_new'),
     url(r'^edit/(?P<album_id>\d+)/$', views.edit_album, name='edit_album'),
     url(r'^delete/(?P<album_id>\d+)/$', views.delete_album, name='delete_album'),
+    url(r'^delete_comment/(?P<comment_id>\d+)/$', views.delete_comment, name='delete_comment'),
+    url(r'^delete_confirmation/(?P<album_id>\d+)/$', views.delete_album_confirmation, name='delete_album_confirmation'),
     url(r'^(?P<album_id>\d+)/comment/$', views.add_comment_to_post, name='add_comment_to_post'),
 ]

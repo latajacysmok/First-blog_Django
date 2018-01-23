@@ -9,8 +9,8 @@ class Album(models.Model):
     artist = models.CharField(max_length=250)
     album_title = models.CharField(max_length=250)
     genre = models.CharField(max_length=250)
-    publication_date = models.IntegerField(null=True)
-    album_logo = models.FileField()
+    publication_date = models.DateField(null=True, blank=True)
+    album_logo = models.ImageField(blank=True, null=True)
     edit_date = models.DateField(null=True)
 
     def get_absolte_url(self):
@@ -29,7 +29,7 @@ class Song(models.Model):
 
 class Comment(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
-    author = models.CharField(max_length=100)
+    author = models.ForeignKey(User)
     comment = models.CharField(max_length=300)
     created_date = models.DateTimeField(default=datetime.datetime.now())
 
