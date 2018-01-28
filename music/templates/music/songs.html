@@ -1,0 +1,18 @@
+{% extends 'music/base.html' %}
+{% block title %} Album Details {% endblock %}
+{% block body %}
+
+{% if all_songs %}
+    <h3>Here are all my songs: </h3>
+    <ul>
+        {% for song in all_songs %}
+        <li><a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a></li>
+        <a href="{% url 'music:edit_album' album.id %}">{{ song.song_title}}</a> |
+        {% endfor %}
+    </ul>
+
+    {% else %}
+        <h3>You don't have any songs</h3>
+    {% endif %}
+
+{% endblock %}

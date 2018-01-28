@@ -34,8 +34,12 @@
                     <img src="http://i.imgur.com/b9b13Rd.png" />
                 {% endif %}
             </label><br/>
+        {% empty %}
+            <p>No songs here yet :(</p>
         {% endfor %}
-        <input type="submit" value="Favorite">
+        {%if song.song_set.all is empty%}
+            <input type="submit" value="Favorite">
+        {% endif %}
     </form>
 
 <hr>
@@ -47,7 +51,10 @@
         <strong>{{ comment.author }}</strong>
         <p>{{ comment.comment|linebreaks }}</p>
         <p>{{ comment.created_date }}</p>
-        <p><a href="">Edit</a> | <a href="{% url 'music:delete_comment' comment.id %}" onclick='window.comment_confirm();'>Delete</a></p>
+        <p><a href="{% url 'music:edit_comment' comment.id %}">Edit</a> | <a href="{% url 'music:delete_comment' comment.id %}" onclick='window.comment_confirm();'>Delete</a></p>
+        {% if comment.edit_date %}
+            , last edited {{ comment.edit_date }}
+        {% endif %}
     </div>
 {% empty %}
     <p>No comments here yet :(</p>
