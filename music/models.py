@@ -10,7 +10,7 @@ class Album(models.Model):
     album_title = models.CharField(max_length=250)
     genre = models.CharField(max_length=250)
     publication_date = models.DateField(null=True, blank=True)
-    album_logo = models.ImageField(blank=True, null=True)
+    album_logo = models.ImageField(upload_to="music/static/music/images/", blank=True, null=True)
     edit_date = models.DateField(null=True)
 
     def get_absolte_url(self):

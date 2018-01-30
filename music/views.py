@@ -44,6 +44,9 @@ def album_new(request):
         if form.is_valid():
             album = form.save(commit=False)
             album.user = request.user
+            # album.album_logo = form.cleaned_data['album_logo']
+            # print("logo: " + album.album_logo.url)
+            print(form.cleaned_data['album_logo'])
             album.save()
             messages.success(request, 'a new album with the title {} has been created.'.format(album.album_title))  # wiadomosc o nowym poscie
             return redirect('http://127.0.0.1:8000/music/{}/'.format(album.pk))

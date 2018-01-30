@@ -1,7 +1,7 @@
 {% extends 'music/base.html' %}
 {% block title %} Album Details {% endblock %}
 {% block body %}
-    <img src=" {{ album.album_logo }}">
+    <img src=" {{ album.album_logo.url }}">
     <h3>{{ album.artist }}</h3>
 
         {% if messages %}
