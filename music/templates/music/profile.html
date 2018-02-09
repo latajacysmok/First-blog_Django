@@ -1,0 +1,10 @@
+{% extends 'music/base.html' %}
+{% block title %} Profile view {% endblock %}
+{% block body %}
+
+<div>
+    <img src="{{ profile.avatar.url }}" />
+    {{profile.description}}
+</div>
+
+{% endblock %}

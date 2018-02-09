@@ -2,12 +2,13 @@
 {% block title %} Album Details {% endblock %}
 {% block body %}
 
-{% if all_songs %}
+{% if songs %}
     <h3>Here are all my songs: </h3>
     <ul>
-        {% for song in all_songs %}
-        <li><a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a></li>
-        <a href="{% url 'music:edit_album' album.id %}">{{ song.song_title}}</a> |
+        {% for song in songs %}
+        <li>
+            {{ song.song_title }} - <a href="{% url 'music:detail' song.album.id %}">{{ song.album.album_title }}</a>
+        </li>
         {% endfor %}
     </ul>
 

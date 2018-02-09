@@ -10,7 +10,7 @@ class Album(models.Model):
     album_title = models.CharField(max_length=250)
     genre = models.CharField(max_length=250)
     publication_date = models.DateField(null=True, blank=True)
-    album_logo = models.ImageField(upload_to="music/static/music/images/", blank=True, null=True)
+    album_logo = models.ImageField(upload_to="music/static/music/images/", default=settings.DEFAULT_URL)
     edit_date = models.DateField(null=True)
 
     def get_absolte_url(self):
@@ -49,7 +49,7 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     description = models.CharField(max_length=1000, null=True)
-    avatar = models.ImageField(upload_to='blog/static/blog/imgs/', default='blog/static/blog/imgs/default.svg')
+    avatar = models.ImageField(upload_to='music/static/music/images/avatars/', default='music/static/music/images/avatars/default.png')
     gender = models.CharField(max_length=12, choices=Gender, null=True)
     age = models.IntegerField(null=True, choices=Age)
     aboutMe = models.TextField(null=True)
