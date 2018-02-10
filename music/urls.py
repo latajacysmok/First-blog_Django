@@ -14,6 +14,6 @@ urlpatterns = [
     url(r'^edit_comment/(?P<comment_id>\d+)/$', views.edit_comment, name='edit_comment'),
     url(r'^delete_confirmation/(?P<album_id>\d+)/$', views.delete_album_confirmation, name='delete_album_confirmation'),
     url(r'^(?P<album_id>\d+)/comment/$', views.add_comment_to_post, name='add_comment_to_post'),
-    url(r'^profile/(?P<name>\w+)/$', views.user_name, name="user_name"),
+    url(r'^edit_profile/$', views.edit_profile, name='edit_profile'),
     url(r'^songs/$', views.songs, name='songs'),
 ]

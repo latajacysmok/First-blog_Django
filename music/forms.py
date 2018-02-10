@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Album, Comment
+from .models import Album, Comment, Profile
 
 class PostForm(forms.ModelForm):
 
@@ -20,3 +20,12 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('comment', )
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['description', 'avatar', 'gender', 'age', 'aboutMe', 'city', 'country', 'email']
+        widgets = {
+			'description': forms.Textarea(attrs={'cols': 30 , 'rows': 10})
+		}
+

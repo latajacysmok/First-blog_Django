@@ -1,6 +1,6 @@
-from .models import *
+from .models import Album, Song, Comment, Profile
 from django.shortcuts import HttpResponseRedirect, get_object_or_404, redirect, render
-from .forms import PostForm, CommentForm
+from .forms import PostForm, CommentForm, ProfileForm
 from django.contrib import messages
 import datetime
 from django.contrib.auth.forms import UserCreationForm
@@ -59,7 +59,7 @@ def edit_album(request, album_id):
     album_id = int(album_id)
     album = get_object_or_404(Album, pk=album_id)
     if request.method == "POST":
-        form = PostForm(request.POST, instance=album)
+        form = PostForm(request.POST, request.FILES, instance=album)
         if form.is_valid():
             album.artist = form.cleaned_data['artist']
             album.album_title = form.cleaned_data['album_title']
@@ -122,7 +122,31 @@ def edit_comment(request, comment_id):
     })
     return render(request, 'music/edit_comment.html', {'form': form})
 
+def edit_profile(request):
+    profile = Profile.objects.get(user=request.user)
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            profile.description = form.cleaned_data['description']
+            profile.avatar = form.cleaned_data['avatar']
+            form.save()
+            return HttpResponseRedirect('/music/')
 
+    form = ProfileForm(initial={
+        'description': profile.description,
+        'avatar': profile.avatar,
+        'gender': profile.gender,
+        'age': profile.age,
+        'aboutMe': profile.aboutMe,
+        'city': profile.city,
+        'country': profile.country,
+        'email': profile.email
+        })
+    context = {
+        'form': form,
+        'profile': profile
+    }
+    return render(request, 'music/editprofile.html', context)
 
 def signup(request):
     if request.method == 'POST':
@@ -151,15 +175,12 @@ def add_comment_to_post(request, album_id):
         form = CommentForm()
     return render(request, 'music/add_comment_to_post.html', {'form': form})
 
-def user_name(request, name):
-    profile = Profile.objects.get(user=request.user)
-    album = Album.objects.filter(user=request.user)
-    context = {
-    	'profile': profile,
-    	'album': album
-    }
-    return render(request, 'music/user_name.html', context)
 
 def songs(request):
-    songs = get_object_or_404()
-    return render(request, 'music/songs.html', {'songs': songs})
+    songs = Song.objects.all()
+    all_albums = Album.objects.all()
+    context = {
+        'songs': songs,
+        'all_albums': all_albums,
+    }
+    return render(request, 'music/songs.html', context)

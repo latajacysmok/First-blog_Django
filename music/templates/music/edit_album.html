@@ -2,15 +2,9 @@
 
 {% block body %}
     <h1>Edit album</h1>
-    {% with url_name=request.resolver_match.url_name %}
-    {% if url_name == 'edit_album' %}
-        <form method="POST">
+        <form method="POST" class="post-form" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
             <button class="btn btn-warning" type="submit">Update</button>
         </form>
-    {% else %}
-        <button class="btn btn-danger" name="delete" type="submit">Delete</button>
-    {% endif %}
-{% endwith %}
 {% endblock %}
