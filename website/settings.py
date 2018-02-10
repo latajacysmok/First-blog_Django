@@ -138,3 +138,5 @@ LOGIN_REDIRECT_URL = '/music/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+DEFAULT_URL = '/music/static/music/images/default.jpg'

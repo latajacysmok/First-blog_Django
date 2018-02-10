@@ -1,0 +1,17 @@
+{% extends 'music/base.html' %}
+{% block title %} Profile view {% endblock %}
+{% block body %}
+
+<div>
+    <strong>Name: </strong>{{ user.username }}</br>
+    <strong>Avatar: </strong> <img src="{{ profile.avatar.url }}" /></br>
+    <strong>Description: </strong> {{profile.description}}</br>
+    <strong>Gender: </strong> {{profile.gender}}</br>
+    <strong>Age: </strong> {{profile.age}}</br>
+    <strong>AboutMe: </strong> {{profile.aboutMe}}</br>
+    <strong>City: </strong> {{profile.city}}</br>
+    <strong>Country: </strong> {{profile.country}}</br>
+    <strong>Email: </strong> {{profile.email}}</br>
+</div>
+
+{% endblock %}

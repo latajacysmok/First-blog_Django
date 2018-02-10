@@ -46,6 +46,11 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li class="">
+                    <a href="{% url 'music:view_profile' user.username %}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; My profile
+                    </a>
+                </li>
+                <li class="">
                     <a href="{% url 'music:album_new' %}">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add Album
                     </a>

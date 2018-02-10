@@ -1,10 +1,11 @@
-from .models import Album, Song, Comment, Profile
-from django.shortcuts import HttpResponseRedirect, get_object_or_404, redirect, render
+from .models import *
+from django.shortcuts import HttpResponseRedirect, HttpResponse, get_object_or_404, redirect, render
 from .forms import PostForm, CommentForm, ProfileForm
 from django.contrib import messages
 import datetime
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
+from django.db.models.signals import post_save
 
 
 def index(request):
@@ -17,7 +18,14 @@ def index(request):
 
 def detail(request, album_id):
     album = get_object_or_404(Album, pk=album_id)
-    return render(request, 'music/detail.html', {'album': album})
+    print("album_songs")
+    print(Song.objects.filter(album=album))
+    context = {
+        'album': album,
+        'album_songs': Song.objects.filter(album=album),
+        'DEFAULT_URL': settings.MEDIA_URL + settings.DEFAULT_URL
+    }
+    return render(request, 'music/detail.html', context)
 
 def favorite(request, album_id):
     album = get_object_or_404(Album, pk=album_id)
@@ -32,11 +40,13 @@ def favorite(request, album_id):
         if selected_song.is_favorite == False:
             selected_song.is_favorite = True
             selected_song.save()
-            return render(request, 'music/detail.html', {'album': album})
+
         else:
             selected_song.is_favorite = False
             selected_song.save()
-            return render(request, 'music/detail.html', {'album': album})
+
+        return render(request, 'music/detail.html', {'album': album})
+
 def album_new(request):
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
@@ -44,13 +54,12 @@ def album_new(request):
         if form.is_valid():
             album = form.save(commit=False)
             album.user = request.user
-            # album.album_logo = form.cleaned_data['album_logo']
-            # print("logo: " + album.album_logo.url)
-            print(form.cleaned_data['album_logo'])
+            album.author = request.user
             album.save()
             messages.success(request, 'a new album with the title {} has been created.'.format(album.album_title))  # wiadomosc o nowym poscie
-            return redirect('http://127.0.0.1:8000/music/{}/'.format(album.pk))
-
+            return redirect('music:index')
+        else:
+            return HttpResponse(form.errors)
     else:
         form = PostForm()
         return render(request, 'music/album_new.html', {'form': form})
@@ -68,7 +77,7 @@ def edit_album(request, album_id):
             album.album_logo = form.cleaned_data['album_logo']
             album.edit_date = datetime.datetime.now()
             form.save()
-            return redirect('http://127.0.0.1:8000/music/{}/'.format(album.pk))
+            return redirect('music:detail', album_id=album_id)
 
     else:
         form = PostForm()
@@ -92,13 +101,13 @@ def delete_album(request, album_id):
     album = get_object_or_404(Album, pk=album_id)
     print(Album.objects.filter(id=album_id))
     album.delete()
-    return redirect('/music/')
+    return redirect('music:index')
 
 def delete_comment(request, comment_id):
     comment_id = int(comment_id)
     comment = get_object_or_404(Comment, id=comment_id)
     comment.delete()
-    return redirect('/music/')
+    return redirect('music:index')
 
 def edit_comment(request, comment_id):
     comment_id = int(comment_id)
@@ -111,7 +120,7 @@ def edit_comment(request, comment_id):
             # comment.created_date = form.cleaned_data['created_date']
             comment.edit_date = datetime.datetime.now()
             form.save()
-            return redirect('/music/')
+            return redirect('music:detail', album_id=comment.album.id)
     else:
         form = CommentForm()
 
@@ -121,6 +130,7 @@ def edit_comment(request, comment_id):
         'created_date': comment.created_date,
     })
     return render(request, 'music/edit_comment.html', {'form': form})
+
 
 def edit_profile(request):
     profile = Profile.objects.get(user=request.user)
@@ -148,6 +158,14 @@ def edit_profile(request):
     }
     return render(request, 'music/editprofile.html', context)
 
+def view_profile(request, username):
+    profile = Profile.objects.get(user__username=username)
+    context = {
+        'profile': profile
+    }
+    return render(request, 'music/profile.html', context)
+
+
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -170,7 +188,7 @@ def add_comment_to_post(request, album_id):
             comment.album = album
             comment.author = request.user
             comment.save()
-            return redirect('/music/')
+            return redirect('music:detail', album_id=album_id)
     else:
         form = CommentForm()
     return render(request, 'music/add_comment_to_post.html', {'form': form})
@@ -184,3 +202,12 @@ def songs(request):
         'all_albums': all_albums,
     }
     return render(request, 'music/songs.html', context)
+
+def create_profile(sender, **kwargs):
+    user = kwargs['instance']
+    if kwargs['created']:
+        profile = Profile(user=user)
+        profile.save()
+
+post_save.connect(create_profile, sender=User) # WAZNE
+

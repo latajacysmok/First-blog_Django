@@ -13,6 +13,8 @@
         {% if album.edit_date %}
             , last edited {{ album.edit_date }}
         {% endif %}
+
+        </br><a href="{% url 'music:view_profile' user.username %}">{{ album.author }}</a>
         {% endfor %}
     </ul>
 

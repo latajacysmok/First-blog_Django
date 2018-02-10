@@ -1,14 +1,17 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
+from django.conf import settings
 import datetime
 
 class Album(models.Model):
+    author = models.ForeignKey(User, null=True, blank=True)
     artist = models.CharField(max_length=250)
     album_title = models.CharField(max_length=250)
     genre = models.CharField(max_length=250)
     publication_date = models.DateField(null=True, blank=True)
     album_logo = models.ImageField(upload_to="music/static/music/images/", default='D:/Projekty/blog1/First-blog_Django/music/static/music/images/background.jpg', blank=True, null=True)
+    album_logo = models.ImageField(upload_to="music/static/music/images/", default=settings.DEFAULT_URL)
     edit_date = models.DateField(null=True)
 
     def get_absolte_url(self):
@@ -45,6 +48,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
     description = models.CharField(max_length=1000, null=True)
     avatar = models.ImageField(upload_to='music/static/music/images', default='music/static/music/images/background.jpg')
+    avatar = models.ImageField(upload_to='music/static/music/images/avatars/', default='music/static/music/images/avatars/default.png')
     gender = models.CharField(max_length=12, choices=Gender, null=True)
     age = models.IntegerField(null=True)
     aboutMe = models.TextField(null=True)

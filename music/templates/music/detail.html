@@ -1,12 +1,11 @@
 {% extends 'music/base.html' %}
 {% block title %} Album Details {% endblock %}
 {% block body %}
-    {% if album.album_logo == None %}
-		<img width='100' height="100" src="https://image.flaticon.com/icons/svg/1/1247.svg" />
-	{% else %}
-		<img width='100' height="100" src='{{  album.album_logo.url }}' />
-	{% endif %}
-    <!--<img src=" {{ album.album_logo.url }}">-->
+    {% if album.album_logo %}
+        <img src=" {{ album.album_logo.url }}">
+    {% else %}
+        <img src="{{ DEFAULT_URL }}" />
+    {% endif %}
     <h3>{{ album.artist }}</h3>
 
         {% if messages %}
@@ -19,11 +18,6 @@
                                 <strong>{{ message }}</strong>
                             </div>
                         {% endfor %}
-                        <!--<ul>-->
-                            <!--{% for message in messages %}-->
-                                <!--<li >{{ message }}</li>-->
-                            <!--{% endfor %}-->
-                        <!--</ul>-->
                     </div>
                 </div>
             </div>
@@ -42,7 +36,7 @@
         {% empty %}
             <p>No songs here yet :(</p>
         {% endfor %}
-        {%if song.song_set.all is empty%}
+        {% if album.song_set %}
             <input type="submit" value="Favorite">
         {% endif %}
     </form>
@@ -58,17 +52,17 @@
         <p>{{ comment.created_date }}</p>
         <p><a href="{% url 'music:edit_comment' comment.id %}">Edit</a> | <a href="{% url 'music:delete_comment' comment.id %}" onclick='window.comment_confirm();'>Delete</a></p>
         {% if comment.edit_date %}
-            , last edited {{ comment.edit_date }}
+            Last edited {{ comment.edit_date }}
         {% endif %}
     </div>
 {% empty %}
     <p>No comments here yet :(</p>
 {% endfor %}
 <script type="text/javascript">
-    window.comment_confirm = function() { 
+    window.comment_confirm = function() {
         var isValid = confirm('Are you sure ?');
-        if (!isValid) { 
-            event.preventDefault(); 
+        if (!isValid) {
+            event.preventDefault();
             alert("It wont delete. Yay!");
         }else {
             alert("It will delete in a while.");
@@ -76,4 +70,3 @@
     }
 </script>
 {% endblock %}
-

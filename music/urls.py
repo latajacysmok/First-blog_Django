@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^(?P<album_id>\d+)/$', views.detail, name='detail'),
     url(r'^(?P<album_id>\d+)/favorite/$', views.favorite, name='favorite'),
+    url(r'^profile/(?P<username>\w+)/$', views.view_profile, name="view_profile"),
     url(r'^new/$', views.album_new, name='album_new'),
     url(r'^edit/(?P<album_id>\d+)/$', views.edit_album, name='edit_album'),
     url(r'^delete/(?P<album_id>\d+)/$', views.delete_album, name='delete_album'),
