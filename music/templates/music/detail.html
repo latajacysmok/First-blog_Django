@@ -2,26 +2,11 @@
 {% block title %} Album Details {% endblock %}
 {% block body %}
     {% if album.album_logo %}
-        <img src=" {{ album.album_logo.url }}">
+        <img  width="300"  src=" {{ album.album_logo.url }}">
     {% else %}
         <img src="{{ DEFAULT_URL }}" />
     {% endif %}
     <h3>{{ album.artist }}</h3>
-
-        {% if messages %}
-            <div>
-                <div class="col-sm-8 col-sm-offset-2">
-                    <div class="alert alert-success alert-dismissible" role="alert">
-                        {% for message in messages %}
-                            <div {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %} role="alert">
-                                <button type="button" class="close" data-dismiss="alert" onclick="$('.alert').hide();" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <strong>{{ message }}</strong>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        {% endif %}
 
     <form action="{% url 'music:favorite' album.id %}" method="post">
         {% csrf_token %}
@@ -36,6 +21,8 @@
         {% empty %}
             <p>No songs here yet :(</p>
         {% endfor %}
+        <p><a href="">Edit</a> | <a href="" onclick='window.comment_confirm();'>Delete</a>
+         | <a href="{% url 'music:song_new' %}" onclick='window.comment_confirm();'>Add</a></p>
         {% if album.song_set %}
             <input type="submit" value="Favorite">
         {% endif %}
@@ -47,13 +34,14 @@
  {% endif %}
 {% for comment in album.comment_set.all %}
     <div class="comment">
-        <strong>{{ comment.author }}</strong>
+
         <p>{{ comment.comment|linebreaks }}</p>
         <p>{{ comment.created_date }}</p>
         <p><a href="{% url 'music:edit_comment' comment.id %}">Edit</a> | <a href="{% url 'music:delete_comment' comment.id %}" onclick='window.comment_confirm();'>Delete</a></p>
         {% if comment.edit_date %}
             Last edited {{ comment.edit_date }}
         {% endif %}
+        <strong>{{ comment.author }}</strong>
     </div>
 {% empty %}
     <p>No comments here yet :(</p>

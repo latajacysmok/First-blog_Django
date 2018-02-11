@@ -45,16 +45,7 @@
             </form>
 
             <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                    <a href="{% url 'music:view_profile' user.username %}">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; My profile
-                    </a>
-                </li>
-                <li class="">
-                    <a href="{% url 'music:album_new' %}">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add Album
-                    </a>
-                </li>
+
                 <li class="">
                     {% if not user.is_authenticated %}
                         <li class="">
@@ -65,10 +56,25 @@
 
                         <li class="">
                         <a href="/signup/">
-                            <span class="glyphicons-dog" aria-hidden="true"></span>&nbsp; Register
+                            <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp; Register
                         </a>
                         </li>
                     {% else %}
+                        <li class="">
+                        <a href="{% url 'music:view_profile' user.username %}">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; My profile
+                        </a>
+                        </li>
+                        <li class="">
+                            <a href="{% url 'music:album_new' %}">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add Album
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="{% url 'music:song_new' %}">
+                                <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>&nbsp; Add Song
+                            </a>
+                        </li>
                         <li class="">
                         <a href="{% url 'music:edit_profile' %}">
                             <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>&nbsp; Edit Profile

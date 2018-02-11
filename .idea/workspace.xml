@@ -2,48 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9d54e03-ebff-4209-9220-50b7f71a4fd5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/music/static/music/images/avatars/default.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/music/static/music/images/default.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/music/static/music/images/avatars/default.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/music/static/music/images/default.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/music/templates/music/profile.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0002_album_edit_date.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0003_auto_20180115_1638.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0004_comment.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0005_auto_20180119_1314.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0006_auto_20180119_1346.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0007_auto_20180123_1243.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0008_auto_20180123_1243.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0009_auto_20180123_1245.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0010_auto_20180123_1246.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0011_auto_20180123_1255.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0012_auto_20180123_1843.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0013_auto_20180123_1845.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0014_auto_20180123_1846.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0015_auto_20180123_1847.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0016_auto_20180123_1848.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0017_auto_20180123_1848.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0018_auto_20180123_1855.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0019_auto_20180126_1810.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0020_auto_20180128_1603.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0021_auto_20180130_1808.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0022_auto_20180201_0507.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0023_auto_20180202_0425.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0024_auto_20180202_0427.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/0025_auto_20180202_0436.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music/migrations/__init__.py" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/music/static/music/images/CCF20170105_0001_f4Kf2d4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/music/static/music/images/logolpmedium.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media/music/static/music/images/nowe_sytuacje_reedycja.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/music/static/music/images/logolpmedium.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/music/static/music/images/nowe_sytuacje_reedycja.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/music/migrations/0024_auto_20180211_0942.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/music/templates/music/song_delete.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/music/templates/music/song_new.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music/admin.py" afterPath="$PROJECT_DIR$/music/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music/forms.py" afterPath="$PROJECT_DIR$/music/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music/models.py" afterPath="$PROJECT_DIR$/music/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music/templates/music/base.html" afterPath="$PROJECT_DIR$/music/templates/music/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music/templates/music/detail.html" afterPath="$PROJECT_DIR$/music/templates/music/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music/templates/music/editprofile.html" afterPath="$PROJECT_DIR$/music/templates/music/editprofile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music/templates/music/index.html" afterPath="$PROJECT_DIR$/music/templates/music/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music/templates/music/songs.html" afterPath="$PROJECT_DIR$/music/templates/music/songs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music/templates/registration/logged_out.html" afterPath="$PROJECT_DIR$/music/templates/registration/logged_out.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music/urls.py" afterPath="$PROJECT_DIR$/music/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/music/views.py" afterPath="$PROJECT_DIR$/music/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/settings.py" afterPath="$PROJECT_DIR$/website/settings.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,25 +34,29 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/music/templates/music/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="48" column="73" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="73" />
+            <state relative-caret-position="345">
+              <caret line="73" column="63" lean-forward="false" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="63" />
               <folding>
-                <element signature="e#2304#2310#0" expanded="true" />
+                <element signature="e#2946#2952#0" expanded="true" />
+                <element signature="e#3225#3231#0" expanded="true" />
+                <element signature="e#3512#3518#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/music/templates/music/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="66" lean-forward="false" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
-              <folding />
+            <state relative-caret-position="255">
+              <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+              <folding>
+                <element signature="e#603#610#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,19 +64,17 @@
       <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/music/templates/music/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="44" column="10" lean-forward="false" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="10" />
-              <folding>
-                <element signature="e#799#806#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="374">
+              <caret line="22" column="20" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="22" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/music/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="187">
               <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -104,51 +83,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/music/forms.py">
+      <file leaf-file-name="song_delete.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/music/templates/music/song_delete.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="26" column="96" lean-forward="false" selection-start-line="26" selection-start-column="91" selection-end-line="26" selection-end-column="96" />
+            <state relative-caret-position="85">
+              <caret line="5" column="48" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/music/templates/music/profile.html">
+      <file leaf-file-name="song_new.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/music/templates/music/song_new.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="139" column="21" lean-forward="false" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editprofile.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/music/templates/music/editprofile.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="71" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="songs.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/music/templates/music/songs.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="140" lean-forward="false" selection-start-line="9" selection-start-column="140" selection-end-line="9" selection-end-column="140" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -157,11 +106,41 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/music/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="17" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="songs.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/music/templates/music/songs.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="15" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="16" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_name.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/Programowanie/Django project/Blog-Maksym-master/blog/templates/blog/user_name.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/music/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -171,8 +150,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -194,9 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="D:/Python/Projekty/GUI/6/Payroll Management Systems.py" />
-        <option value="D:/Python/Projekty/GUI/6/Restaurant Management Systems.py" />
-        <option value="D:/Python/Projekty/GUI/6,25/Payroll Management Systems.py" />
         <option value="D:/Python/Projekty/extraNumber.py" />
         <option value="D:/Python/Projekty/Code_Fight[upgrade]/arrayReplace.py" />
         <option value="D:/Python/Projekty/Code_Fight[upgrade]/evenDigitsOnly.py" />
@@ -215,9 +191,7 @@
         <option value="D:/Python/Projekty/Automatyzacja nudnych zadań/Dopasowywanie wzorca za pomocą wyrażeń regularnych/strip/strip.py" />
         <option value="D:/Python/Projekty/Automatyzacja nudnych zadań/Dopasowywanie wzorca za pomocą wyrażeń regularnych/Password/password.py" />
         <option value="$USER_HOME$/Desktop/Programowanie/Django project/Blog-Maksym-master/blog/templates/blog/editprofile.html" />
-        <option value="$PROJECT_DIR$/music/forms.py" />
         <option value="$PROJECT_DIR$/music/templates/music/edit_album.html" />
-        <option value="$PROJECT_DIR$/music/templates/music/editprofile.html" />
         <option value="D:/Python/Projekty/GUI/7,2/Car Rental.py" />
         <option value="D:/Python/Projekty/Code_Fight[upgrade]/isInfiniteProcess.py" />
         <option value="D:/Python/Projekty/Zadanie domowe/ad1.py" />
@@ -235,16 +209,21 @@
         <option value="D:/Python/Projekty/Code_Fight[upgrade]/Core/lateRide.py" />
         <option value="D:/Python/Projekty/Code_Fight[upgrade]/Core/phoneCall.py" />
         <option value="$PROJECT_DIR$/music/admin.py" />
-        <option value="$PROJECT_DIR$/music/urls.py" />
-        <option value="$PROJECT_DIR$/music/templates/music/detail.html" />
         <option value="$PROJECT_DIR$/music/templates/music/songs.html" />
-        <option value="$PROJECT_DIR$/music/templates/music/base.html" />
         <option value="$PROJECT_DIR$/music/templates/music/profile.html" />
         <option value="$PROJECT_DIR$/website/settings.py" />
         <option value="$PROJECT_DIR$/music/migrations/0004_auto_20180210_1408.py" />
+        <option value="$PROJECT_DIR$/music/templates/music/editprofile.html" />
         <option value="$PROJECT_DIR$/music/models.py" />
-        <option value="$PROJECT_DIR$/music/views.py" />
+        <option value="$PROJECT_DIR$/music/templates/registration/logged_out.html" />
+        <option value="$PROJECT_DIR$/music/templates/music/song_new.html" />
+        <option value="$PROJECT_DIR$/music/forms.py" />
+        <option value="$PROJECT_DIR$/music/templates/music/base.html" />
         <option value="$PROJECT_DIR$/music/templates/music/index.html" />
+        <option value="$PROJECT_DIR$/music/templates/music/detail.html" />
+        <option value="$PROJECT_DIR$/music/urls.py" />
+        <option value="$PROJECT_DIR$/music/templates/music/song_delete.html" />
+        <option value="$PROJECT_DIR$/music/views.py" />
       </list>
     </option>
   </component>
@@ -269,8 +248,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -431,26 +408,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="First-blog_Django" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="First-blog_Django" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="music" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -635,18 +596,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -674,12 +635,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/Python/Projekty/Automatyzacja nudnych zadań/Password/password.py" />
-    <entry file="file://D:/Python/Projekty/Automatyzacja nudnych zadań/date/match_date.py" />
-    <entry file="file://D:/Python/Projekty/Code_Fight[upgrade]/alternatingSums.py" />
-    <entry file="file://D:/Python/Projekty/Code_Fight[upgrade]/extractEachKth.py" />
-    <entry file="file://D:/Python/Projekty/Code_Fight[upgrade]/arrayMaxConsecutiveSum.py" />
-    <entry file="file://D:/Python/Projekty/Code_Fight[upgrade]/differentSymbolsNaive.py" />
     <entry file="file://D:/Python/Projekty/Code_Fight[upgrade]/firstDigit.py" />
     <entry file="file://D:/Python/Projekty/GUI/6,9/Ordering Systems.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -711,13 +666,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/music/templates/music/user_name.html" />
-    <entry file="file://$USER_HOME$/Desktop/Programowanie/Django project/Blog-Maksym-master/blog/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/Programowanie/Django project/Blog-Maksym-master/blog/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -803,7 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="27" lean-forward="true" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -867,40 +814,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/music/urls.py">
+    <entry file="file://$PROJECT_DIR$/website/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="37" />
+        <state relative-caret-position="2346">
+          <caret line="139" column="21" lean-forward="false" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/music/migrations/0004_auto_20180210_1408.py" />
     <entry file="file://$PROJECT_DIR$/music/templates/music/editprofile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="71" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="71" />
+        <state relative-caret-position="272">
+          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/music/forms.py">
+    <entry file="file://$USER_HOME$/Desktop/Programowanie/Django project/Blog-Maksym-master/blog/templates/registration/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="96" lean-forward="false" selection-start-line="26" selection-start-column="91" selection-end-line="26" selection-end-column="96" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/music/templates/music/songs.html">
+    <entry file="file://$PROJECT_DIR$/music/templates/registration/logged_out.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="140" lean-forward="false" selection-start-line="9" selection-start-column="140" selection-end-line="9" selection-end-column="140" />
+        <state relative-caret-position="306">
+          <caret line="18" column="43" lean-forward="false" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -913,67 +858,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/settings.py">
+    <entry file="file://$PROJECT_DIR$/music/templates/music/album_new.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="139" column="21" lean-forward="false" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/music/migrations/0004_auto_20180210_1408.py">
+    <entry file="file://$PROJECT_DIR$/music/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#24#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Programowanie/Django project/Blog-Maksym-master/blog/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="62" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/music/models.py">
+    <entry file="file://$USER_HOME$/Desktop/Programowanie/Django project/Blog-Maksym-master/blog/templates/blog/user_name.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/music/templates/music/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="73" column="63" lean-forward="false" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="63" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#2946#2952#0" expanded="true" />
+            <element signature="e#3225#3231#0" expanded="true" />
+            <element signature="e#3512#3518#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/music/templates/music/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="44" column="10" lean-forward="false" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="10" />
+        <state relative-caret-position="374">
+          <caret line="22" column="20" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="22" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/music/templates/music/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
           <folding>
-            <element signature="e#799#806#0" expanded="true" />
+            <element signature="e#603#610#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/music/templates/music/base.html">
+    <entry file="file://$PROJECT_DIR$/music/templates/music/songs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="48" column="73" lean-forward="false" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="73" />
+        <state relative-caret-position="272">
+          <caret line="16" column="15" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="16" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/music/templates/music/song_new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/music/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/music/templates/music/song_delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="48" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/music/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="17" />
           <folding>
-            <element signature="e#2304#2310#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/music/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="187">
           <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/music/templates/music/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="66" lean-forward="false" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -2,7 +2,30 @@
 {% block title %} Albums {% endblock %}
 {% block body %}
 
-    {% if all_albums %}
+{% if messages %}
+            <div>
+                <div class="col-sm-8 col-sm-offset-2">
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        {% for message in messages %}
+                            <div {% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %} role="alert">
+                                <button type="button" class="close" data-dismiss="alert" onclick="$('.alert').hide();" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <strong>{{ message }}</strong>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+
+        {% endif %}
+
+{% if all_albums %}
     <h3>Here are all my albums: </h3>
     <ul>
         {% for album in all_albums %}
@@ -13,8 +36,9 @@
         {% if album.edit_date %}
             , last edited {{ album.edit_date }}
         {% endif %}
-
-        </br><a href="{% url 'music:view_profile' user.username %}">{{ album.author }}</a>
+        {% if user.is_authenticated %}
+            </br><a href="{% url 'music:view_profile' user.username %}">{{ album.author }}</a>
+        {% endif %}
         {% endfor %}
     </ul>
 

@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Album, Comment, Profile
+from .models import Album, Comment, Profile, Song
 
 class PostForm(forms.ModelForm):
 
@@ -29,3 +29,9 @@ class ProfileForm(forms.ModelForm):
 			'description': forms.Textarea(attrs={'cols': 30 , 'rows': 10})
 		}
 
+class SongForm(forms.ModelForm):
+
+    class Meta:
+        model = Song
+        fields = ('album',
+                  'song_title',)

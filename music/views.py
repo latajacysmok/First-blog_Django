@@ -1,6 +1,6 @@
 from .models import *
 from django.shortcuts import HttpResponseRedirect, HttpResponse, get_object_or_404, redirect, render
-from .forms import PostForm, CommentForm, ProfileForm
+from .forms import PostForm, CommentForm, ProfileForm, SongForm
 from django.contrib import messages
 import datetime
 from django.contrib.auth.forms import UserCreationForm
@@ -9,7 +9,7 @@ from django.db.models.signals import post_save
 
 
 def index(request):
-    all_albums = Album.objects.all()
+    all_albums = Album.objects.all().order_by("-creation_date")
     context = {
         'all_albums': all_albums,
     }
@@ -64,6 +64,33 @@ def album_new(request):
         form = PostForm()
         return render(request, 'music/album_new.html', {'form': form})
 
+def song_new(request):
+    if request.method == "POST":
+        form = SongForm(request.POST)
+        print(form.errors)
+        if form.is_valid():
+            song = form.save(commit=False)
+            song.save()
+            messages.success(request, 'a new song with the title {} has been created.'.format(song.song_title))  # wiadomosc o nowym poscie
+            return redirect('music:detail', album_id=song.album.id)
+        else:
+            return HttpResponse(form.errors)
+    else:
+        form = SongForm()
+        return render(request, 'music/song_new.html', {'form': form})
+
+def delete_song(request, album_id):
+    album_id = int(album_id)
+    album = get_object_or_404(Album, pk=album_id)
+    songs = Song.objects.all()
+    all_albums = Album.objects.all()
+    context = {
+        'songs': songs,
+        'all_albums': all_albums,
+        'album': album,
+    }
+    return render(request, 'music/song_delete.html', context)
+
 def edit_album(request, album_id):
     album_id = int(album_id)
     album = get_object_or_404(Album, pk=album_id)
@@ -107,7 +134,7 @@ def delete_comment(request, comment_id):
     comment_id = int(comment_id)
     comment = get_object_or_404(Comment, id=comment_id)
     comment.delete()
-    return redirect('music:index')
+    return redirect('music:detail', album_id=comment.album.id)
 
 def edit_comment(request, comment_id):
     comment_id = int(comment_id)

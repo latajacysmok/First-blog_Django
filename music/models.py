@@ -13,6 +13,7 @@ class Album(models.Model):
     album_logo = models.ImageField(upload_to="music/static/music/images/", default='D:/Projekty/blog1/First-blog_Django/music/static/music/images/background.jpg', blank=True, null=True)
     album_logo = models.ImageField(upload_to="music/static/music/images/", default=settings.DEFAULT_URL)
     edit_date = models.DateField(null=True)
+    creation_date = models.DateField(default=datetime.datetime.now, null=True, blank=True)
 
     def get_absolte_url(self):
         return reverse('music:detail', kwargs={'pk': self.pk})
