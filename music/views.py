@@ -18,8 +18,6 @@ def index(request):
 
 def detail(request, album_id):
     album = get_object_or_404(Album, pk=album_id)
-    print("album_songs")
-    print(Song.objects.filter(album=album))
     context = {
         'album': album,
         'album_songs': Song.objects.filter(album=album),
@@ -82,14 +80,9 @@ def song_new(request):
 def delete_song(request, album_id):
     album_id = int(album_id)
     album = get_object_or_404(Album, pk=album_id)
-    songs = Song.objects.all()
-    all_albums = Album.objects.all()
-    context = {
-        'songs': songs,
-        'all_albums': all_albums,
-        'album': album,
-    }
-    return render(request, 'music/song_delete.html', context)
+    # selected_song = album.song_set.get(pk=request.POST['song'])
+    print("Song to delete: ", album)
+    return render(request, 'music/detail.html', {'album': album})
 
 def edit_album(request, album_id):
     album_id = int(album_id)
@@ -187,11 +180,11 @@ def edit_profile(request):
 
 def view_profile(request, username):
     profile = Profile.objects.get(user__username=username)
+    print("profile: ", Profile.objects.all())
     context = {
-        'profile': profile
+        'profile': profile,
     }
     return render(request, 'music/profile.html', context)
-
 
 def signup(request):
     if request.method == 'POST':

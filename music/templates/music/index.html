@@ -37,7 +37,7 @@
             , last edited {{ album.edit_date }}
         {% endif %}
         {% if user.is_authenticated %}
-            </br><a href="{% url 'music:view_profile' user.username %}">{{ album.author }}</a>
+            </br><a href="{% url 'music:view_profile' album.author %}">{{ album.author }}</a>
         {% endif %}
         {% endfor %}
     </ul>

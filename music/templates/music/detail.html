@@ -21,7 +21,7 @@
         {% empty %}
             <p>No songs here yet :(</p>
         {% endfor %}
-        <p><a href="">Edit</a> | <a href="" onclick='window.comment_confirm();'>Delete</a>
+        <p><a href="">Edit</a> | <a href="{% url 'music:detail' album.id %}">Delete</a>
          | <a href="{% url 'music:song_new' %}" onclick='window.comment_confirm();'>Add</a></p>
         {% if album.song_set %}
             <input type="submit" value="Favorite">

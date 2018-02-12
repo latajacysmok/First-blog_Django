@@ -1,18 +1,6 @@
 {% extends 'music/base.html' %}
 
 {% block body %}
-    <h1>Song delete</h1>
-    {% if songs %}
-    <h3>Here are songs from {{ album.album_title }}: </h3>
-    <ul>
-        {% for song in songs %}
-        <li>
-            {{ song.song_title }} - <a href="">{{ song.album.album_title }}</a> - {{ song.album.artist }}
-        </li>
-        {% endfor %}
-    </ul>
+    <h1>Dupa!!!</h1>
 
-    {% else %}
-        <h3>You don't have any songs</h3>
-    {% endif %}
 {% endblock %}
