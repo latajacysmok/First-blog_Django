@@ -11,8 +11,9 @@
     <form action="{% url 'music:favorite' album.id %}" method="post">
         {% csrf_token %}
         {% for song in album.song_set.all %}
-            <input type="radio" id="song{{ forloop.counter}}" name="song", value="{{ song.id }}"/>
+            <input type="radio" id="song{{ forloop.counter}}" class="song" name="song" value="{{ song.id }}"/>
             <label for="song{{ forloop.counter}}">
+                {{ song.id }}
                 {{ song.song_title }}
                 {% if song.is_favorite %}
                     <img src="http://i.imgur.com/b9b13Rd.png" />
@@ -21,7 +22,7 @@
         {% empty %}
             <p>No songs here yet :(</p>
         {% endfor %}
-        <p><a href="">Edit</a> | <a href="{% url 'music:detail' album.id %}">Delete</a>
+        <p><a href="#" onclick="window.edit();">Edit</a> | <a href="#" onclick="window.delete();">Delete</a>
          | <a href="{% url 'music:song_new' %}" onclick='window.comment_confirm();'>Add</a></p>
         {% if album.song_set %}
             <input type="submit" value="Favorite">
@@ -55,6 +56,16 @@
         }else {
             alert("It will delete in a while.");
         }
+    }
+
+    window.delete = function() {
+        var checked = $('.song:checked').val(); 
+        window.location.href = '/music/delete_song/' + checked + '/';
+    }
+
+    window.edit = function() {
+        var checked = $('.song:checked').val(); 
+        window.location.href = '/music/edit_song/' + checked + '/';
     }
 </script>
 {% endblock %}

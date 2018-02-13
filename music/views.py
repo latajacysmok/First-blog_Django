@@ -77,11 +77,10 @@ def song_new(request):
         form = SongForm()
         return render(request, 'music/song_new.html', {'form': form})
 
-def delete_song(request, album_id):
-    album_id = int(album_id)
-    album = get_object_or_404(Album, pk=album_id)
-    # selected_song = album.song_set.get(pk=request.POST['song'])
-    print("Song to delete: ", album)
+def delete_song(request, id):
+    song = Song.objects.get(id=int(id))
+    album = song.album
+    song.delete()
     return render(request, 'music/detail.html', {'album': album})
 
 def edit_album(request, album_id):
