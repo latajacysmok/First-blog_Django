@@ -1,5 +1,5 @@
 from .models import *
-from django.shortcuts import HttpResponseRedirect, HttpResponse, get_object_or_404, redirect, render
+from django.shortcuts import HttpResponseRedirect, render, redirect, HttpResponse, get_object_or_404
 from .forms import PostForm, CommentForm, ProfileForm, SongForm
 from django.contrib import messages
 import datetime
