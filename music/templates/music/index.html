@@ -30,8 +30,17 @@
     <ul>
         {% for album in all_albums %}
         <li><a href="{% url 'music:detail' album.id %}">{{ album.album_title }}</a></li>
-        <a href="{% url 'music:edit_album' album.id %}">Edit</a> |
-        <a href="{% url 'music:delete_album_confirmation' album.id %}">Delete</a> |
+        {%if request.user.username == album.author%}
+            {{request.user.is_authenticated}}
+        {% endif %}
+
+        {% if album.author.username ==  user.username%}
+
+            <a href="{% url 'music:edit_album' album.id %}">Edit</a> |
+            <a href="{% url 'music:delete_album_confirmation' album.id %}">Delete</a> |
+
+        {% endif %}
+
         <a href="{% url 'music:detail' album.id %}">Comments: {{ album.comment_set.count }}</a>
         {% if album.edit_date %}
             , last edited {{ album.edit_date }}

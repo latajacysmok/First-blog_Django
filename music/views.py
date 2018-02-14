@@ -13,7 +13,6 @@ def index(request):
     context = {
         'all_albums': all_albums,
     }
-
     return render(request, 'music/index.html', context)
 
 def detail(request, album_id):
@@ -82,6 +81,25 @@ def delete_song(request, id):
     album = song.album
     song.delete()
     return render(request, 'music/detail.html', {'album': album})
+
+def edit_song(request, id):
+    id = int(id)
+    song = get_object_or_404(Song, pk=id)
+    if request.method == "POST":
+        form = SongForm(request.POST, instance=song)
+        if form.is_valid():
+            song.album = form.cleaned_data['album']
+            song.song_title = form.cleaned_data['song_title']
+            form.save()
+            return redirect('music:detail', album_id=song.album.id)
+    else:
+        form = SongForm()
+
+    form = SongForm(initial={
+        'album': song.album,
+        'song_title': song.song_title,
+    })
+    return render(request, 'music/edit_song.html', {'form': form})
 
 def edit_album(request, album_id):
     album_id = int(album_id)

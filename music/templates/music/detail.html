@@ -13,7 +13,6 @@
         {% for song in album.song_set.all %}
             <input type="radio" id="song{{ forloop.counter}}" class="song" name="song" value="{{ song.id }}"/>
             <label for="song{{ forloop.counter}}">
-                {{ song.id }}
                 {{ song.song_title }}
                 {% if song.is_favorite %}
                     <img src="http://i.imgur.com/b9b13Rd.png" />
@@ -22,10 +21,13 @@
         {% empty %}
             <p>No songs here yet :(</p>
         {% endfor %}
-        <p><a href="#" onclick="window.edit();">Edit</a> | <a href="#" onclick="window.delete();">Delete</a>
-         | <a href="{% url 'music:song_new' %}" onclick='window.comment_confirm();'>Add</a></p>
-        {% if album.song_set %}
-            <input type="submit" value="Favorite">
+
+        {% if album.author.username ==  user.username%}
+            <p><a href="#" onclick="window.edit();">Edit</a> | <a href="#" onclick="window.delete();">Delete</a>
+             | <a href="{% url 'music:song_new' %}">Add</a></p>
+            {% if album.song_set %}
+                <input type="submit" value="Favorite">
+            {% endif %}
         {% endif %}
     </form>
 
@@ -38,9 +40,11 @@
 
         <p>{{ comment.comment|linebreaks }}</p>
         <p>{{ comment.created_date }}</p>
-        <p><a href="{% url 'music:edit_comment' comment.id %}">Edit</a> | <a href="{% url 'music:delete_comment' comment.id %}" onclick='window.comment_confirm();'>Delete</a></p>
+        {% if comment.author.username ==  user.username%}
+            <p><a href="{% url 'music:edit_comment' comment.id %}">Edit</a> | <a href="{% url 'music:delete_comment' comment.id %}" onclick='window.comment_confirm();'>Delete</a></p>
+        {% endif %}
         {% if comment.edit_date %}
-            Last edited {{ comment.edit_date }}
+            Last edited {{ comment.edit_date }}</br>
         {% endif %}
         <strong>{{ comment.author }}</strong>
     </div>
